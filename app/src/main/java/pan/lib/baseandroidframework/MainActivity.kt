@@ -1,9 +1,9 @@
 package pan.lib.baseandroidframework
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import pan.lib.common_lib.BaseActivity
 
-class MainActivity : AppCompatActivity() {
+class MainActivity : BaseActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

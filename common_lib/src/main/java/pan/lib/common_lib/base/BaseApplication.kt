@@ -2,7 +2,8 @@ package pan.lib.common_lib.base
 
 import android.content.Context
 import androidx.multidex.MultiDexApplication
-import com.hjq.toast.ToastUtils
+import pan.lib.common_lib.utils.initLogger
+
 
 /**
  *
@@ -23,5 +24,6 @@ abstract class BaseApplication : MultiDexApplication() {
     override fun onCreate() {
         super.onCreate()
         instance = this
+        initLogger()
     }
 }

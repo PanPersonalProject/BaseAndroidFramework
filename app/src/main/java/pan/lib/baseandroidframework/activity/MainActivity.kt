@@ -1,8 +1,9 @@
-package pan.lib.baseandroidframework
+package pan.lib.baseandroidframework.activity
 
 import android.os.Bundle
 import androidx.activity.viewModels
 import kotlinx.android.synthetic.main.activity_main.*
+import pan.lib.baseandroidframework.R
 import pan.lib.baseandroidframework.models.TestModel
 import pan.lib.common_lib.base.BaseActivity
 

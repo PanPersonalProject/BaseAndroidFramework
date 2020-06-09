@@ -40,9 +40,11 @@ dependencies {
     api 'androidx.appcompat:appcompat:1.1.0'
     api 'androidx.constraintlayout:constraintlayout:1.1.3'
     api 'androidx.multidex:multidex:2.0.1'
+    api 'androidx.preference:preference:1.1.1'
 
     //third
     api 'com.google.code.gson:gson:2.8.5'
+    api 'com.github.salomonbrys.kotson:kotson:2.5.0'
     api 'org.greenrobot:eventbus:3.1.1'
     api 'com.github.CymChad:BaseRecyclerViewAdapterHelper:3.0.4'
     api 'com.yanyusong.y_divideritemdecoration:y_divideritemdecoration:2.0'

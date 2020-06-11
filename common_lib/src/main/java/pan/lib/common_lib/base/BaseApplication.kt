@@ -11,14 +11,13 @@ import pan.lib.common_lib.utils.initLogger
  * CreateDate:     2020/6/4 16:53
  */
 
+val applicationContext: Context
+    get() = BaseApplication.instance.applicationContext
+
 abstract class BaseApplication : MultiDexApplication() {
 
     companion object {
-        var instance: BaseApplication? = null
-
-        fun getContext(): Context {
-            return instance!!.applicationContext
-        }
+        lateinit var instance: BaseApplication
     }
 
     override fun onCreate() {

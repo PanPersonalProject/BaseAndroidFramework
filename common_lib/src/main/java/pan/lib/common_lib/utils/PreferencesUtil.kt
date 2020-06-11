@@ -2,7 +2,7 @@ package pan.lib.common_lib.utils
 
 import android.content.SharedPreferences
 import androidx.preference.PreferenceManager
-import pan.lib.common_lib.base.BaseApplication.Companion.getContext
+import pan.lib.common_lib.base.applicationContext
 
 /**
  *
@@ -14,7 +14,7 @@ object PreferencesUtil {
 
     private val sharedPreferences: SharedPreferences
         get() {
-            return PreferenceManager.getDefaultSharedPreferences(getContext())
+            return PreferenceManager.getDefaultSharedPreferences(applicationContext)
         }
 
     private val editor: SharedPreferences.Editor

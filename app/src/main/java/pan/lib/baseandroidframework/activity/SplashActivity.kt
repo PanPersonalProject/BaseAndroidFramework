@@ -19,6 +19,7 @@ class SplashActivity : BaseActivity() {
             }, 2000)
         } else {
             //todo go to login activity
+            startActivity<MainActivity>()
         }
 
 

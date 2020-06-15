@@ -1,4 +1,4 @@
-package pan.lib.common_lib.image_loader
+package pers.pan.imageloader
 
 /**
  * author: Pan

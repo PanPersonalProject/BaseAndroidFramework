@@ -1,17 +1,11 @@
-package pan.lib.common_lib.image_loader
+package pers.pan.imageloader
 
 import android.content.Context
 import android.graphics.Color
 import android.view.View
-import androidx.annotation.ColorInt
-import androidx.annotation.DrawableRes
-import androidx.annotation.Nullable
-import androidx.annotation.RawRes
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentActivity
 import com.bumptech.glide.Glide
-import com.bumptech.glide.RequestManager
-import pan.lib.common_lib.R
 
 /**
  * author: Pan

@@ -4,7 +4,6 @@ import android.graphics.Bitmap
 import android.graphics.Color
 import android.graphics.drawable.Drawable
 import android.net.Uri
-import android.widget.ImageView
 import com.bumptech.glide.RequestBuilder
 import com.bumptech.glide.RequestManager
 import java.io.File
@@ -13,48 +12,39 @@ import java.io.File
  * author: Pan
  * date: 2020/6/14
  */
-class ImageStrategy(private val requestManager: RequestManager) : LoadTypes {
+class RequestManager(private val requestManager: RequestManager) : LoadTypes {
     lateinit var requestBuilder: RequestBuilder<Drawable>
     var replaceHolder: Int = Color.TRANSPARENT
 
 
-    override fun load(bitmap: Bitmap?): ImageStrategy {
+    override fun load(bitmap: Bitmap?): RequestExecutor {
         requestBuilder = requestManager.load(bitmap)
-        return this
-
+        return RequestExecutor(requestBuilder)
     }
 
-    override fun load(drawable: Drawable?): ImageStrategy {
+    override fun load(drawable: Drawable?): RequestExecutor {
         requestBuilder = requestManager.load(drawable)
-        return this
+        return RequestExecutor(requestBuilder)
     }
 
-    override fun load(string: String?): ImageStrategy {
+    override fun load(string: String?): RequestExecutor {
         requestBuilder = requestManager.load(string)
-        return this
+        return RequestExecutor(requestBuilder)
     }
 
-    override fun load(uri: Uri?): ImageStrategy {
+    override fun load(uri: Uri?): RequestExecutor {
         requestBuilder = requestManager.load(uri)
-        return this
+        return RequestExecutor(requestBuilder)
     }
 
-    override fun load(file: File?): ImageStrategy {
+    override fun load(file: File?): RequestExecutor {
         requestBuilder = requestManager.load(file)
-        return this
+        return RequestExecutor(requestBuilder)
     }
 
-    override fun load(resourceId: Int?): ImageStrategy {
+    override fun load(resourceId: Int?): RequestExecutor {
         requestBuilder = requestManager.load(resourceId)
-        return this
-    }
-
-    fun circle() {
-
-    }
-
-    fun into(imageView: ImageView) {
-        requestBuilder.into(imageView)
+        return RequestExecutor(requestBuilder)
     }
 
 

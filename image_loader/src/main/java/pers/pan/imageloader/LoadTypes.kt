@@ -14,21 +14,21 @@ import java.io.File
 
 internal interface LoadTypes {
 
-    fun load(bitmap: Bitmap?): ImageStrategy
+    fun load(bitmap: Bitmap?): RequestExecutor
 
 
-    fun load(drawable: Drawable?): ImageStrategy
+    fun load(drawable: Drawable?): RequestExecutor
 
 
-    fun load(string: String?): ImageStrategy
+    fun load(string: String?): RequestExecutor
 
 
-    fun load(uri: Uri?): ImageStrategy
+    fun load(uri: Uri?): RequestExecutor
 
 
-    fun load(file: File?): ImageStrategy
+    fun load(file: File?): RequestExecutor
 
 
-    fun load(@RawRes @DrawableRes resourceId: Int?): ImageStrategy
+    fun load(@RawRes @DrawableRes resourceId: Int?): RequestExecutor
 
 }

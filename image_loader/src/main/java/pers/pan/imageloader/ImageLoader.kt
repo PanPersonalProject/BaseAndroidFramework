@@ -10,25 +10,26 @@ import com.bumptech.glide.Glide
 /**
  * author: Pan
  * date: 2020/6/14
+ * 图片加载二次封装，方便统一管理和替换
  */
 object ImageLoader {
 
     var replaceHolder: Int = Color.TRANSPARENT
 
-    fun with(context: Context): ImageStrategy {
-        return ImageStrategy(Glide.with(context))
+    fun with(context: Context): RequestManager {
+        return RequestManager(Glide.with(context))
     }
 
-    fun with(activity: FragmentActivity): ImageStrategy {
-        return ImageStrategy(Glide.with(activity))
+    fun with(activity: FragmentActivity): RequestManager {
+        return RequestManager(Glide.with(activity))
     }
 
-    fun with(fragment: Fragment): ImageStrategy {
-        return ImageStrategy(Glide.with(fragment))
+    fun with(fragment: Fragment): RequestManager {
+        return RequestManager(Glide.with(fragment))
     }
 
-    fun with(view: View): ImageStrategy {
-        return ImageStrategy(Glide.with(view.context))
+    fun with(view: View): RequestManager {
+        return RequestManager(Glide.with(view.context))
     }
 
 }

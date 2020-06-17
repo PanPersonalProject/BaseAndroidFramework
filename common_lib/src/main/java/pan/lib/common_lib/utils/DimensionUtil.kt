@@ -32,3 +32,9 @@ val Number.sp: Int
         Resources.getSystem().displayMetrics
     ).toInt()
 
+
+/**
+ *px->px
+ */
+val Number.px: Int
+    get() = this.toInt()

@@ -6,5 +6,6 @@ package pan.lib.common_lib.retrofit
  */
 class HttpResult<T> {
     var code = 0
-    var data: T? = null
+    val message: String? = null
+    var result: T? = null
 }

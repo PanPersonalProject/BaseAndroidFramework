@@ -1,8 +1,6 @@
 package pan.lib.common_lib.retrofit
 
-import com.google.gson.JsonObject
 import pan.lib.common_lib.data.TestBean
-import retrofit2.Response
 import retrofit2.http.GET
 
 /**
@@ -13,6 +11,6 @@ import retrofit2.http.GET
 interface ApiService {
 
 
-    @GET("https://api.gushi.ci/all.json")
-    suspend fun testApi(): TestBean
+    @GET("https://api.apiopen.top/getJoke?page=1&count=2&type=video")
+    suspend fun testApi(): HttpResult<TestBean>
 }

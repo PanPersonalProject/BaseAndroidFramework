@@ -1,9 +1,10 @@
 package pan.lib.baseandroidframework.models
 
+import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import androidx.lifecycle.viewModelScope
-import kotlinx.coroutines.launch
+import pan.lib.common_lib.data.TestBean
 import pan.lib.common_lib.retrofit.RetrofitManager
+import pan.lib.common_lib.utils.http
 
 /**
  *
@@ -12,10 +13,11 @@ import pan.lib.common_lib.retrofit.RetrofitManager
  */
 class TestModel : ViewModel() {
 
-
+    val testBeanLiveData = MutableLiveData<TestBean>()
     fun testApi() {
-        viewModelScope.launch {
-            val testApi = RetrofitManager.getApiService().testApi();
+        http {
+            val testBean = RetrofitManager.getApiService().testApi()
+            testBeanLiveData.value = testBean.result
         }
     }
 

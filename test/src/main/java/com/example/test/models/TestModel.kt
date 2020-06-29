@@ -13,11 +13,11 @@ import pan.lib.common_lib.utils.http
  */
 class TestModel : ViewModel() {
 
-    val testBeanLiveData = MutableLiveData<TestBean>()
+    val testBeanLiveData = MutableLiveData<List<TestBean>>()
     fun testApi() {
         http {
             val testBean = RetrofitManager.getApiService().testApi()
-            testBeanLiveData.value = testBean.result
+            testBeanLiveData.value = testBean?.result
         }
     }
 

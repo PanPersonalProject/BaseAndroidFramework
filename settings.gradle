@@ -1,3 +1,4 @@
+include ':test'
 rootProject.name='BaseAndroidFramework'
 include ':app'
 include ':common_lib'

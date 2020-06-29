@@ -12,5 +12,5 @@ interface ApiService {
 
 
     @GET("https://api.apiopen.top/getJoke?page=1&count=2&type=video")
-    suspend fun testApi(): HttpResult<TestBean>
+    suspend fun testApi(): HttpResult<List<TestBean>>?
 }

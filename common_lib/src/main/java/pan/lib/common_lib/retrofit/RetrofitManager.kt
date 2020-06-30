@@ -63,8 +63,8 @@ object RetrofitManager {
         return loggingInterceptor
     }
 
-    fun getApiService(): ApiService {
-        return retrofit.create(ApiService::class.java)
+    fun <T> getApiService(apiServiceClass: Class<T>): T {
+        return retrofit.create(apiServiceClass)
     }
 
 

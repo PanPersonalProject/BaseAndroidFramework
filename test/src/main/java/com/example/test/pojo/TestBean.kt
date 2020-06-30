@@ -1,4 +1,4 @@
-package pan.lib.common_lib.data
+package com.example.test.pojo
 
 /**
  *

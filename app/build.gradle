@@ -3,17 +3,19 @@ apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-android-extensions'
 apply plugin: 'kotlin-kapt'
 apply plugin: 'dagger.hilt.android.plugin'
+apply from: "../config.gradle"
+
 
 android {
-    compileSdkVersion 29
-    buildToolsVersion "29.0.2"
+    compileSdkVersion android.compileSdkVersion
+    buildToolsVersion android.buildToolsVersion
 
     defaultConfig {
         applicationId "pan.lib.baseandroidframework"
-        minSdkVersion 19
-        targetSdkVersion 29
-        versionCode 1
-        versionName "1.0"
+        minSdkVersion android.minSdkVersion
+        targetSdkVersion android.targetSdkVersion
+        versionCode android.versionCode
+        versionName android.versionName
 
     }
 
@@ -39,8 +41,8 @@ dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     implementation project(':common_lib')
     debugImplementation project(':test')
-    implementation "com.google.dagger:hilt-android:2.28.1-alpha"
-    kapt "com.google.dagger:hilt-android-compiler:2.28-alpha"
-    implementation 'androidx.hilt:hilt-lifecycle-viewmodel:1.0.0-alpha01'
-    kapt 'androidx.hilt:hilt-compiler:1.0.0-alpha01'
+    implementation "com.google.dagger:hilt-android:$depVer.hilt"
+    kapt "com.google.dagger:hilt-android-compiler:$depVer.hilt"
+    implementation "androidx.hilt:hilt-lifecycle-viewmodel:$depVer.hilt_jetpack"
+    kapt "androidx.hilt:hilt-compiler:$depVer.hilt_jetpack"
 }

@@ -7,9 +7,11 @@ import androidx.lifecycle.Observer
 import com.example.test.R
 import kotlinx.android.synthetic.main.activity_example_net_work.*
 import com.example.test.models.TestModel
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class ExampleNetWorkActivity : AppCompatActivity() {
-    private val testModel by viewModels<TestModel>()
+    private val testModel: TestModel by viewModels()
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_example_net_work)

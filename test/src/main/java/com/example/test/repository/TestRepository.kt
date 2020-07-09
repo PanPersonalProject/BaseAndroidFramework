@@ -1,13 +1,16 @@
 package com.example.test.repository
 
 import com.example.test.TestApiService
-import pan.lib.common_lib.retrofit.RetrofitManager
+import javax.inject.Inject
+import javax.inject.Singleton
 
 /**
  *
  * Author:         pan qi
  * CreateDate:     2020/6/30
  */
-class TestRepository {
-    suspend fun testApi() = RetrofitManager.getApiService(TestApiService::class.java).testApi()
+
+//@Singleton
+class TestRepository @Inject constructor( val testApiService: TestApiService) {
+    suspend fun testApi() = testApiService.testApi()
 }

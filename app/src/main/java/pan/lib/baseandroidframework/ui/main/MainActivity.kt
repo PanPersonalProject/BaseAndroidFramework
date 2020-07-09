@@ -1,4 +1,4 @@
-package pan.lib.baseandroidframework.activity
+package pan.lib.baseandroidframework.ui.main
 
 import android.os.Bundle
 import com.example.test.activity.ExampleNetWorkActivity

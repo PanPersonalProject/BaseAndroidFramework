@@ -1,4 +1,4 @@
-package pan.lib.common_lib.utils
+package pan.lib.common_lib.utils.ext
 
 import com.github.salomonbrys.kotson.fromJson
 import com.google.gson.Gson

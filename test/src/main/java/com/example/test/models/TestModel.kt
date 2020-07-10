@@ -5,7 +5,7 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.example.test.pojo.TestBean
 import com.example.test.repository.TestRepository
-import pan.lib.common_lib.utils.http
+import pan.lib.common_lib.utils.ext.http
 
 /**
  *

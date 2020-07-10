@@ -1,4 +1,4 @@
-package pan.lib.common_lib.utils
+package pan.lib.common_lib.utils.ext
 
 import android.content.res.Resources
 import android.util.TypedValue

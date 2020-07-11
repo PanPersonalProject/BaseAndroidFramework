@@ -2,6 +2,8 @@ package pan.lib.common_lib.base
 
 import android.content.Context
 import androidx.multidex.MultiDexApplication
+import com.alibaba.android.arouter.launcher.ARouter
+import pan.lib.common_lib.BuildConfig
 import pan.lib.common_lib.utils.initLogger
 
 
@@ -24,5 +26,14 @@ abstract class BaseApplication : MultiDexApplication() {
         super.onCreate()
         instance = this
         initLogger()
+        initARouter()
+    }
+
+      private fun initARouter() {
+        if (BuildConfig.DEBUG) {
+            ARouter.openLog()
+            ARouter.openDebug()
+        }
+        ARouter.init(this)
     }
 }

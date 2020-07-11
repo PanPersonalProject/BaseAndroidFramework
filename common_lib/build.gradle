@@ -70,4 +70,5 @@ dependencies {
     api 'com.squareup.okhttp3:logging-interceptor:4.7.2'
     api 'com.hjq:toast:8.2'
     api 'com.orhanobut:logger:2.2.0'
+    api "com.alibaba:arouter-api:$depVer.arouter"
 }

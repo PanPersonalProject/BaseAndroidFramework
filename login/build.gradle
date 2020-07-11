@@ -34,6 +34,13 @@ android {
         freeCompilerArgs = ['-Xjvm-default=enable']
         jvmTarget = JavaVersion.VERSION_1_8
     }
+
+    kapt {
+        arguments {
+            arg("AROUTER_MODULE_NAME", project.getName())
+        }
+    }
+
 }
 
 dependencies {
@@ -45,5 +52,7 @@ dependencies {
     kapt "com.google.dagger:hilt-android-compiler:$depVer.hilt"
     implementation "androidx.hilt:hilt-lifecycle-viewmodel:$depVer.hilt_jetpack"
     kapt "androidx.hilt:hilt-compiler:$depVer.hilt_jetpack"
+
+    kapt "com.alibaba:arouter-compiler:$depVer.arouter_kapt"
 
 }

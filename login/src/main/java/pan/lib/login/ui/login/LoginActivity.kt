@@ -8,9 +8,11 @@ import android.widget.Toast
 import androidx.activity.viewModels
 import androidx.annotation.StringRes
 import androidx.lifecycle.Observer
+import com.alibaba.android.arouter.facade.annotation.Route
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.android.synthetic.main.activity_login.*
 import pan.lib.common_lib.base.BaseActivity
+import pan.lib.common_lib.data.constant.ArouterPath
 import pan.lib.common_lib.utils.ext.onTextChanged
 import pan.lib.login.R
 
@@ -19,10 +21,12 @@ import pan.lib.login.R
  * Author:         pan qi
  * CreateDate:     2020/7/10
  */
+
+@Route(path = ArouterPath.LoginActivity)
 @AndroidEntryPoint
 class LoginActivity : BaseActivity() {
 
-    private  val loginViewModel: LoginViewModel by viewModels()
+    private val loginViewModel: LoginViewModel by viewModels()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

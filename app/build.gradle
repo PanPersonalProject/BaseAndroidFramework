@@ -17,12 +17,38 @@ android {
         versionCode android.versionCode
         versionName android.versionName
 
+        ndk {
+            abiFilters 'arm64-v8a', 'armeabi-v7a'
+        }
+
+        kapt {
+            arguments {
+                arg("AROUTER_MODULE_NAME", project.getName())
+            }
+        }
+    }
+
+    signingConfigs {
+        jks {
+            storeFile file('key.jks')
+            storePassword 'yesterday you said tomorrow'
+            keyAlias 'key'
+            keyPassword 'yesterday you said tomorrow'
+        }
     }
 
     buildTypes {
         release {
-            minifyEnabled false
+            signingConfig signingConfigs.jks
+            minifyEnabled true
+            shrinkResources true
+            zipAlignEnabled true
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+
+        debug {
+            minifyEnabled false
+            signingConfig signingConfigs.jks
         }
     }
     compileOptions {
@@ -34,12 +60,8 @@ android {
         freeCompilerArgs = ['-Xjvm-default=enable']
         jvmTarget = JavaVersion.VERSION_1_8
     }
-    
-    kapt {
-        arguments {
-            arg("AROUTER_MODULE_NAME", project.getName())
-        }
-    }
+
+
 
 }
 
@@ -47,7 +69,7 @@ dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     implementation project(':common_lib')
     implementation project(':login')
-    debugImplementation project(':test')
+    implementation project(':test')
 
     implementation "com.google.dagger:hilt-android:$depVer.hilt"
     kapt "com.google.dagger:hilt-android-compiler:$depVer.hilt"

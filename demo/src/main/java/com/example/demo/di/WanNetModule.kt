@@ -1,6 +1,6 @@
-package com.example.test.di
+package com.example.demo.di
 
-import com.example.test.TestApiService
+import com.example.demo.WanApiService
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -14,9 +14,10 @@ import javax.inject.Singleton
  */
 @InstallIn(ApplicationComponent::class)
 @Module
-object TestNetWorkModule {
+object WanNetModule {
     @Provides
     @Singleton
-    fun provideService(): TestApiService = RetrofitManager.getApiService(TestApiService::class.java)
+    fun provideService(): WanApiService = RetrofitManager.getApiService(
+        WanApiService::class.java)
 
 }

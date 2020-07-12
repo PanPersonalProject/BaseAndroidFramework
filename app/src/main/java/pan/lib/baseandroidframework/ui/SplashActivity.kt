@@ -20,7 +20,7 @@ class SplashActivity : BaseActivity() {
                 finish()
             }, 2000)
         } else {
-            startActivity<LoginActivity>()
+            startActivity<MainActivity>()
         }
 
 

@@ -3,7 +3,7 @@
     package="com.example.test">
 
     <application>
-        <activity android:name=".activity.ExampleNetWorkActivity"></activity>
+        <activity android:name="com.example.demo.ui.top.TopArticleActivity" />
     </application>
 
 </manifest>

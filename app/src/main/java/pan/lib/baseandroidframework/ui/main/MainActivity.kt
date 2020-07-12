@@ -1,7 +1,7 @@
 package pan.lib.baseandroidframework.ui.main
 
 import android.os.Bundle
-import com.example.test.activity.ExampleNetWorkActivity
+import com.example.demo.ui.top.TopArticleActivity
 import kotlinx.android.synthetic.main.activity_main.*
 import org.jetbrains.anko.startActivity
 import pan.lib.baseandroidframework.R
@@ -17,7 +17,7 @@ class MainActivity : BaseActivity() {
 
 
         btNet.setOnClickListener {
-            startActivity<ExampleNetWorkActivity>()
+            startActivity<TopArticleActivity>()
         }
 
 //        requestPermission(this, Permission.Group.STORAGE,

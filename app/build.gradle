@@ -69,7 +69,7 @@ dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     implementation project(':common_lib')
     implementation project(':login')
-    implementation project(':test')
+    implementation project(':demo')
 
     implementation "com.google.dagger:hilt-android:$depVer.hilt"
     kapt "com.google.dagger:hilt-android-compiler:$depVer.hilt"

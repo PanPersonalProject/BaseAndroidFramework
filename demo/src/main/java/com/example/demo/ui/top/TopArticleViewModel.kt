@@ -15,11 +15,13 @@ import pan.lib.common_lib.utils.ext.http
 class TopArticleViewModel @ViewModelInject constructor(private val articleRepository: ArticleRepository) :
     ViewModel() {
 
-    val articleList = MutableLiveData<List<TopArticle>>()
-    fun testApi() {
+
+    val articleList = MutableLiveData<MutableList<TopArticle>>()
+
+    fun fetchTopArticle() {
         http {
             val response = articleRepository.fetchTopArticle()
-            articleList.value = response.data
+            articleList.value = response.data.toMutableList()
         }
     }
 

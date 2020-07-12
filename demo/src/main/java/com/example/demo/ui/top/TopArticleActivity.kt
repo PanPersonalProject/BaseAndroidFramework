@@ -1,26 +1,34 @@
 package com.example.demo.ui.top
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.activity.viewModels
 import androidx.lifecycle.Observer
-import com.example.test.R
-import kotlinx.android.synthetic.main.activity_example_net_work.*
+import androidx.lifecycle.lifecycleScope
+import com.example.demo.R
 import dagger.hilt.android.AndroidEntryPoint
+import kotlinx.android.synthetic.main.activity_top_article.*
+import pan.lib.common_lib.base.BaseActivity
 
 @AndroidEntryPoint
-class TopArticleActivity : AppCompatActivity() {
+class TopArticleActivity : BaseActivity() {
     private val topArticleViewModel: TopArticleViewModel by viewModels()
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_example_net_work)
+        setContentView(R.layout.activity_top_article)
 
-        btTest.setOnClickListener {
-            topArticleViewModel.testApi()
-        }
+        initView()
+
+        topArticleViewModel.fetchTopArticle()
+
+
+    }
+
+    private fun initView() {
+        val topArticleAdapter = TopArticleAdapter()
+        recyclerView.adapter = topArticleAdapter
 
         topArticleViewModel.articleList.observe(this, Observer {
-            tvText.text = it.toString()
+            topArticleAdapter.setNewInstance(it)
         })
     }
 }

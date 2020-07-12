@@ -1,4 +1,4 @@
-package pan.lib.login.data
+package pan.lib.common_lib.retrofit
 
 /**
  * A generic class that holds a value with its loading status.

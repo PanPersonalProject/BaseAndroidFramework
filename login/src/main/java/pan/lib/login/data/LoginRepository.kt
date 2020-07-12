@@ -1,5 +1,6 @@
 package pan.lib.login.data
 
+import pan.lib.common_lib.retrofit.Result
 import pan.lib.login.data.model.LoggedInUser
 import javax.inject.Inject
 

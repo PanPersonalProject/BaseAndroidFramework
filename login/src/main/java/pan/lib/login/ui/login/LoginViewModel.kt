@@ -6,7 +6,7 @@ import androidx.lifecycle.ViewModel
 import android.util.Patterns
 import androidx.hilt.lifecycle.ViewModelInject
 import pan.lib.login.data.LoginRepository
-import pan.lib.login.data.Result
+import pan.lib.common_lib.retrofit.Result
 
 import pan.lib.login.R
 

@@ -31,7 +31,7 @@ object RetrofitManager {
     private fun initRetrofit(): Retrofit {
         return Retrofit.Builder()
             .client(initOkHttpClient())
-            .baseUrl("https://www.baidu.com")
+            .baseUrl("https://www.wanandroid.com")
             .addConverterFactory(GsonConverterFactory.create())
             .build()
     }

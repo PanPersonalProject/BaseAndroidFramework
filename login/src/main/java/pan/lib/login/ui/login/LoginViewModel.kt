@@ -1,14 +1,13 @@
 package pan.lib.login.ui.login
 
+import android.util.Patterns
+import androidx.hilt.lifecycle.ViewModelInject
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import android.util.Patterns
-import androidx.hilt.lifecycle.ViewModelInject
-import pan.lib.login.data.LoginRepository
-import pan.lib.common_lib.retrofit.Result
-
+import pan.lib.common_lib.retrofit.NetResult
 import pan.lib.login.R
+import pan.lib.login.data.LoginRepository
 
 class LoginViewModel @ViewModelInject constructor(private val loginRepository: LoginRepository) :
     ViewModel() {
@@ -23,7 +22,7 @@ class LoginViewModel @ViewModelInject constructor(private val loginRepository: L
         // can be launched in a separate asynchronous job
         val result = loginRepository.login(username, password)
 
-        if (result is Result.Success) {
+        if (result is NetResult.Success) {
             _loginResult.value =
                 LoginResult(success = LoggedInUserView(displayName = result.data.displayName))
         } else {

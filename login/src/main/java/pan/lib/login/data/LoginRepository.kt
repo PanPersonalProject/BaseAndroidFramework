@@ -1,6 +1,6 @@
 package pan.lib.login.data
 
-import pan.lib.common_lib.retrofit.Result
+import pan.lib.common_lib.retrofit.NetResult
 import pan.lib.login.data.model.LoggedInUser
 import javax.inject.Inject
 
@@ -30,11 +30,11 @@ class LoginRepository @Inject constructor(val dataSource: LoginDataSource) {
     }
 
 
-    fun login(username: String, password: String): Result<LoggedInUser> {
+    fun login(username: String, password: String): NetResult<LoggedInUser> {
         // handle login
         val result = dataSource.login(username, password)
 
-        if (result is Result.Success) {
+        if (result is NetResult.Success) {
             setLoggedInUser(result.data)
         }
 

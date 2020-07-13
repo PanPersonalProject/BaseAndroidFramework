@@ -5,7 +5,7 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.example.demo.pojo.TopArticle
 import com.example.demo.repository.ArticleRepository
-import pan.lib.common_lib.utils.ext.http
+import pan.lib.common_lib.utils.ext.launchOnUI
 
 /**
  *
@@ -19,9 +19,13 @@ class TopArticleViewModel @ViewModelInject constructor(private val articleReposi
     val articleList = MutableLiveData<MutableList<TopArticle>>()
 
     fun fetchTopArticle() {
-        http {
+        launchOnUI {
             val response = articleRepository.fetchTopArticle()
-            articleList.value = response.data.toMutableList()
+
+            response.whenSuccess {
+                articleList.value = it.toMutableList()
+            }
+
         }
     }
 

@@ -3,7 +3,6 @@ package pan.lib.common_lib.retrofit
 import android.net.ParseException
 import com.google.gson.JsonParseException
 import com.google.gson.stream.MalformedJsonException
-import org.apache.http.conn.ConnectTimeoutException
 import org.json.JSONException
 import retrofit2.HttpException
 import java.net.ConnectException
@@ -37,8 +36,6 @@ object ExceptionHandle {
             ResultException(NETWORK_ERROR, "连接失败")
         } else if (e is SSLException) {
             ResultException(SSL_ERROR, "证书验证失败")
-        } else if (e is ConnectTimeoutException) {
-            ResultException(TIMEOUT_ERROR, "连接超时")
         } else if (e is SocketTimeoutException) {
             ResultException(TIMEOUT_ERROR, "连接超时")
         } else if (e is UnknownHostException) {

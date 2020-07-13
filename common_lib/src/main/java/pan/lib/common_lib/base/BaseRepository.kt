@@ -1,5 +1,6 @@
 package pan.lib.common_lib.base
 
+import pan.lib.common_lib.retrofit.ExceptionHandle
 import pan.lib.common_lib.retrofit.NetResult
 import pan.lib.common_lib.retrofit.Response
 import pan.lib.common_lib.retrofit.ResultException
@@ -15,7 +16,7 @@ open class BaseRepository {
         return try {
             checkResponse(call())
         } catch (e: Exception) {
-            NetResult.Error(ResultException.handlerException(e))
+            NetResult.Error(ExceptionHandle.handleException(e))
         }
     }
 

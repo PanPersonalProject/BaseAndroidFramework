@@ -11,7 +11,15 @@ import pan.lib.common_lib.retrofit.ResultException
  */
 open class BaseRepository {
 
-    protected suspend fun <T : Any> checkResponse(response: Response<T>): NetResult<T> {
+    protected suspend fun <T : Any> fetchApi(call: suspend () -> Response<T>): NetResult<T> {
+        return try {
+            checkResponse(call())
+        } catch (e: Exception) {
+            NetResult.Error(ResultException.handlerException(e))
+        }
+    }
+
+    private fun <T : Any> checkResponse(response: Response<T>): NetResult<T> {
         return if (response.getCode() == 0) {
             NetResult.Success(response.getResponse())
         } else {

@@ -17,7 +17,7 @@ import javax.inject.Singleton
 class ArticleRepository @Inject constructor(private val wanApiService: WanApiService) :
     BaseRepository() {
     suspend fun fetchTopArticle(): NetResult<List<TopArticle>> {
-        return checkResponse(wanApiService.topArticle())
+        return fetchApi { wanApiService.topArticle() }
     }
 
 }

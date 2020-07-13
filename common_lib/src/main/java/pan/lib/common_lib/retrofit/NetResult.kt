@@ -7,7 +7,7 @@ package pan.lib.common_lib.retrofit
 sealed class NetResult<out T : Any> {
 
     data class Success<out T : Any>(val data: T) : NetResult<T>()
-    data class Error(val exception: Exception) : NetResult<Nothing>()
+    data class Error(val exception: ResultException) : NetResult<Nothing>()
 
 
     fun whenSuccess(block: (T) -> Unit) {

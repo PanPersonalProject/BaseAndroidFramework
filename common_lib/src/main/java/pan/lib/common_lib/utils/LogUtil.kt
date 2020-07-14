@@ -35,7 +35,7 @@ fun printNetLog(response: String?) {
     printLogWithTag(LOGGER_NETWORK_TAG, response)
 }
 
-fun printLog(any: Any) {
+fun printLog(any: Any?) {
     Logger.d(any)
 }
 

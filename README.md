@@ -17,7 +17,7 @@
 - [Glide](https://github.com/bumptech/glide), [Glide Transformations](https://github.com/wasabeef/glide-transformations)
 - [Logger](https://github.com/orhanobut/logger) - Simple, pretty and powerful logger for android
 - [BaseRecyclerViewAdapterHelper](https://github.com/CymChad/BaseRecyclerViewAdapterHelper) - 强大而灵活的RecyclerView Adapter
-- Gson，[Kotson](https://github.com/SalomonBrys/Kotson))-  更简易的Gson使用 val userInfo: User="user json".toObject()
+- Gson，[Kotson](https://github.com/SalomonBrys/Kotson)-  更简易的Gson使用 val userInfo: User="user json".toObject()
 
 ## 网络请求Example
 

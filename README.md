@@ -1,6 +1,6 @@
 <h1 align="center">BaseAndroidFramework</h1>
 <p align="center">  
-一款基于google官方推荐架构体系封装和Jetpack的MVVM框架。致力于写出最精简而又简单的代码，又保证项目的健壮性。
+一款基于google官方推荐架构体系封装和Jetpack的MVVM框架。致力于写出最精简,易读性又高的代码，又保证项目的健壮性。
 项目正在搭建中，如果喜欢的话不妨点个star~
 </p>
 

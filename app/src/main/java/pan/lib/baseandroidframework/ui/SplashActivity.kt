@@ -7,7 +7,6 @@ import pan.lib.baseandroidframework.R
 import pan.lib.baseandroidframework.ui.main.MainActivity
 import pan.lib.common_lib.base.BaseActivity
 import pan.lib.common_lib.utils.UserHelper
-import pan.lib.login.ui.login.LoginActivity
 
 class SplashActivity : BaseActivity() {
 

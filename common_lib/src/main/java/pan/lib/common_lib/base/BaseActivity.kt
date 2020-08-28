@@ -13,7 +13,8 @@ abstract class BaseActivity : AppCompatActivity() {
         initStatusBar()
     }
 
-    private fun initStatusBar() {
+
+    open fun initStatusBar() {
         ImmersionBar.with(this)
             .statusBarColor(R.color.colorPrimary)
             .keyboardEnable(true)  //解决软键盘与底部输入框冲突问题

@@ -13,14 +13,16 @@ class TopArticleActivity : BaseActivity() {
     private val topArticleViewModel: TopArticleViewModel by viewModels()
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_top_article)
-
+        setTitle(R.string.top_article)
+        enableBack()
         initView()
 
         topArticleViewModel.fetchTopArticle()
 
 
     }
+
+    override fun getLayoutId() = R.layout.activity_top_article
 
     private fun initView() {
         val topArticleAdapter = TopArticleAdapter()

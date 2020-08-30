@@ -12,7 +12,7 @@ class SplashActivity : BaseActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_splash)
+        showToolbar(false)
         if (UserHelper.userInfo != null) {
             Handler().postDelayed({
                 startActivity<MainActivity>()
@@ -24,6 +24,8 @@ class SplashActivity : BaseActivity() {
 
 
     }
+
+    override fun getLayoutId()=R.layout.activity_splash
 
 
 }

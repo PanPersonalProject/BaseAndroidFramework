@@ -14,7 +14,7 @@
         <item name="android:windowExitAnimation">@anim/popup_out</item>
     </style>
 
-    <style name="toolbar_theme" parent="AppTheme">
+    <style name="ToolbarTheme" parent="AppTheme">
         <item name="colorControlNormal">@android:color/white</item>
     </style>
 </resources>

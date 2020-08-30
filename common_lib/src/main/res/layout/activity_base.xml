@@ -10,11 +10,11 @@
 
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/commonToolbar"
-        style="@style/toolbar_theme"
         android:layout_width="match_parent"
         android:layout_height="48dp"
         android:background="@color/colorPrimary"
-        android:elevation="6dp">
+        android:elevation="6dp"
+        android:theme="@style/ToolbarTheme">
 
         <TextView
             android:id="@+id/tvTitle"

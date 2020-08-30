@@ -49,7 +49,7 @@ abstract class BaseActivity : AppCompatActivity() {
      * 设置标题
      * @param resId
      */
-    fun setText(@StringRes resId: Int) {
+    override fun setTitle(@StringRes resId: Int) {
         tvTitle.setText(resId)
     }
 

@@ -27,20 +27,20 @@ object UserHelper {
         val userJson = user.toJson()
         if (TextUtils.isEmpty(userJson)) return false
         val encryptJson = DESUtil.des(userJson, Cipher.ENCRYPT_MODE)
-        PreferencesUtil.setValue(USER_SP_KEY, encryptJson)
+        PreferencesUtil.put(USER_SP_KEY, encryptJson)
         return true
     }
 
     private fun initUser(): User? {
-        val encryptUserJson = PreferencesUtil.getValue(USER_SP_KEY, null)
+        val encryptUserJson = PreferencesUtil.getString(USER_SP_KEY)
         if (TextUtils.isEmpty(encryptUserJson)) return null
         val userJson = DESUtil.des(encryptUserJson, Cipher.DECRYPT_MODE)
         userInfo = userJson.toObject()
         return userInfo
     }
 
-    fun deleteUserInfo(): Boolean {
-        return PreferencesUtil.remove(USER_SP_KEY)
+    fun deleteUserInfo() {
+        PreferencesUtil.remove(USER_SP_KEY)
     }
 
     fun getUserIdx(): Int {

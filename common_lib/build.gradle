@@ -73,4 +73,5 @@ dependencies {
     api 'com.orhanobut:logger:2.2.0'
     api "com.alibaba:arouter-api:$depVer.arouter"
     api 'com.gyf.immersionbar:immersionbar:3.0.0'
+    implementation  'com.tencent:mmkv-static:1.2.2'
 }

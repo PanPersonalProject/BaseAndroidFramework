@@ -1,8 +1,8 @@
 package pan.lib.common_lib.utils
 
-import android.content.SharedPreferences
-import androidx.preference.PreferenceManager
-import pan.lib.common_lib.base.applicationContext
+import android.os.Parcelable
+import com.tencent.mmkv.MMKV
+import java.util.*
 
 /**
  *
@@ -12,54 +12,84 @@ import pan.lib.common_lib.base.applicationContext
 
 object PreferencesUtil {
 
-    private val sharedPreferences: SharedPreferences
+    private val kv: MMKV?
         get() {
-            return PreferenceManager.getDefaultSharedPreferences(applicationContext)
-        }
-
-    private val editor: SharedPreferences.Editor
-        get() {
-            return sharedPreferences.edit()
+            return MMKV.defaultMMKV()
         }
 
 
-    fun getValue(key: String, defaultValue: String?): String? {
-        return sharedPreferences.getString(key, defaultValue)
+    fun put(key: String, value: Any?) {
+        when (value) {
+            is String -> kv?.encode(key, value)
+            is Float -> kv?.encode(key, value)
+            is Boolean -> kv?.encode(key, value)
+            is Int -> kv?.encode(key, value)
+            is Long -> kv?.encode(key, value)
+            is Double -> kv?.encode(key, value)
+            is ByteArray -> kv?.encode(key, value)
+            is Nothing -> return
+        }
     }
 
-    fun setValue(key: String, value: String?) {
-        editor.putString(key, value).apply()
+    fun <T : Parcelable> put(key: String, t: T?) {
+        if (t == null) {
+            return
+        }
+        kv?.encode(key, t)
     }
 
-    fun getValue(key: String, defaultValue: Int): Int {
-        return sharedPreferences.getInt(key, defaultValue)
+    fun put(key: String, sets: Set<String>?) {
+        if (sets == null) {
+            return
+        }
+        kv?.encode(key, sets)
     }
 
-    fun setValue(key: String, value: Int) {
-        editor.putInt(key, value).commit()
+    fun <T : Parcelable> getParcelable(key: String, tClass: Class<T>): T? {
+        return kv?.decodeParcelable(key, tClass)
     }
 
-    fun getValue(key: String, defaultValue: Boolean): Boolean {
-        return sharedPreferences.getBoolean(key, defaultValue)
+    fun getString(key: String, defaultValue: String? = null): String? {
+        return kv?.decodeString(key, defaultValue)
     }
 
-    fun setValue(key: String, value: Boolean) {
-        editor.putBoolean(key, value).commit()
+    fun getInt(key: String, defaultValue: Int = 0): Int? {
+        return kv?.decodeInt(key, 0)
     }
 
-    fun getValue(key: String, defaultValue: Long): Long {
-        return sharedPreferences.getLong(key, defaultValue)
+    fun getDouble(key: String, defaultValue: Double = 0.0): Double? {
+
+        return kv?.decodeDouble(key, defaultValue)
     }
 
-    fun setValue(key: String, value: Long) {
-        editor.putLong(key, value).commit()
+    fun getLong(key: String, defaultValue: Long = 0L): Long? {
+        return kv?.decodeLong(key, defaultValue)
     }
 
-    fun clear(): Boolean {
-        return editor.clear().commit()
+    fun getBoolean(key: String, defaultValue: Boolean = false): Boolean? {
+        return kv?.decodeBool(key, defaultValue)
     }
 
-    fun remove(key: String): Boolean {
-        return editor.remove(key).commit()
+    fun getFloat(key: String, defaultValue: Float = 0.0f): Float? {
+        return kv?.decodeFloat(key, defaultValue)
+    }
+
+    fun getByteArray(key: String): ByteArray? {
+        return kv?.decodeBytes(key)
+    }
+
+
+    fun getStringSet(key: String): Set<String>? {
+        return kv?.decodeStringSet(key, Collections.emptySet())
+    }
+
+    fun clear() {
+        kv?.clearAll()
+    }
+
+    fun remove(key: String) {
+        kv?.removeValueForKey(key)
     }
 }
+
+

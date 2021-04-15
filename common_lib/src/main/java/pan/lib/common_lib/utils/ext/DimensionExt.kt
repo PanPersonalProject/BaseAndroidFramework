@@ -14,12 +14,16 @@ import android.util.TypedValue
  *dp->px
  */
 
-val Number.dp: Int
+val Number.dp2px: Int
     get() = TypedValue.applyDimension(
         TypedValue.COMPLEX_UNIT_DIP,
         this.toFloat(),
         Resources.getSystem().displayMetrics
     ).toInt()
+
+
+val Number.px2dp: Int
+    get() = (this.toFloat() / Resources.getSystem().displayMetrics.density).toInt()
 
 
 /**

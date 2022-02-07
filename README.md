@@ -74,7 +74,7 @@ class ArticleRepository @Inject constructor(private val wanApiService: WanApiSer
 ```
 
 ```kotlin
-@InstallIn(ApplicationComponent::class)
+@InstallIn(SingletonComponent::class)
 @Module
 object WanNetModule {
     @Provides

@@ -4,7 +4,7 @@ import com.example.demo.WanApiService
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
-import dagger.hilt.android.components.ApplicationComponent
+import dagger.hilt.components.SingletonComponent
 import pan.lib.common_lib.retrofit.RetrofitManager
 import javax.inject.Singleton
 
@@ -12,7 +12,7 @@ import javax.inject.Singleton
  * author: Pan
  * date: 2020/7/9
  */
-@InstallIn(ApplicationComponent::class)
+@InstallIn(SingletonComponent::class)
 @Module
 object WanNetModule {
     @Provides

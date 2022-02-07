@@ -12,8 +12,6 @@ android {
     defaultConfig {
         minSdkVersion android.minSdkVersion
         targetSdkVersion android.targetSdkVersion
-        versionCode android.versionCode
-        versionName android.versionName
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
         consumerProguardFiles "consumer-rules.pro"
@@ -41,9 +39,9 @@ android {
 dependencies {
     implementation fileTree(dir: "libs", include: ["*.jar"])
 
-    testImplementation 'junit:junit:4.13'
-    androidTestImplementation 'androidx.test.ext:junit:1.1.1'
-    androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
+    testImplementation 'junit:junit:4.13.2'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.3'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.4.0'
     implementation project(':common_lib')
     implementation "com.google.dagger:hilt-android:$depVer.hilt"
     kapt "com.google.dagger:hilt-android-compiler:$depVer.hilt"

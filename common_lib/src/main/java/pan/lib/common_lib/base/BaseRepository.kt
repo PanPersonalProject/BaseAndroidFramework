@@ -20,6 +20,15 @@ open class BaseRepository {
         }
     }
 
+    protected suspend fun <T : Any> fetchRawApi(call: suspend () -> T): NetResult<T> {
+        return try {
+            NetResult.Success(call())
+        } catch (e: Exception) {
+            NetResult.Error(ExceptionHandle.handleException(e))
+        }
+    }
+
+
     private fun <T : Any> checkResponse(response: Response<T>): NetResult<T> {
         return if (response.getCode() == 0) {
             NetResult.Success(response.getResponse())

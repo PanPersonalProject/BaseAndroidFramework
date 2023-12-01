@@ -1,17 +1,16 @@
 ext {
 
-    kotlin_version = '1.6.10'
+    kotlin_version = '1.8.0'
     android = [
-            compileSdkVersion: 31,
-            buildToolsVersion: "30.0.2",
+            compileSdkVersion: 33,
             minSdkVersion    : 24,
-            targetSdkVersion : 31,
+            targetSdkVersion : 33,
             versionCode      : 1,
             versionName      : "1.0.0",
     ]
 
     depVer = [
-            hilt        : "2.40.5",
+            hilt        : "2.44",
             hilt_jetpack: "1.0.0-alpha03",
 
             arouter     : "1.5.1",

@@ -1,6 +1,6 @@
 apply plugin: 'com.android.application'
 apply plugin: 'kotlin-android'
-apply plugin: 'kotlin-android-extensions'
+
 apply plugin: 'kotlin-kapt'
 apply plugin: 'dagger.hilt.android.plugin'
 apply from: "../config.gradle"
@@ -8,7 +8,7 @@ apply from: "../config.gradle"
 
 android {
     compileSdkVersion android.compileSdkVersion
-    buildToolsVersion android.buildToolsVersion
+    
 
     defaultConfig {
         applicationId "pan.lib.baseandroidframework"

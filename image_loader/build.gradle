@@ -1,18 +1,21 @@
 apply plugin: 'com.android.library'
 apply plugin: 'kotlin-android'
-apply plugin: 'kotlin-android-extensions'
+
 apply plugin: 'kotlin-kapt'
 apply from: "../config.gradle"
 
 android {
     compileSdkVersion android.compileSdkVersion
-    buildToolsVersion android.buildToolsVersion
+    
 
     defaultConfig {
         minSdkVersion android.minSdkVersion
         targetSdkVersion android.targetSdkVersion
 
         consumerProguardFiles "consumer-rules.pro"
+    }
+    buildFeatures {
+        viewBinding true
     }
 
     buildTypes {

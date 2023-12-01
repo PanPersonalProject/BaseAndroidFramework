@@ -5,7 +5,6 @@ import androidx.activity.viewModels
 import androidx.lifecycle.Observer
 import com.example.demo.R
 import dagger.hilt.android.AndroidEntryPoint
-import kotlinx.android.synthetic.main.activity_top_article.*
 import pan.lib.common_lib.base.BaseActivity
 
 @AndroidEntryPoint

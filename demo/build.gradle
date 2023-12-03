@@ -6,17 +6,20 @@ apply plugin: 'dagger.hilt.android.plugin'
 apply from: "../config.gradle"
 
 android {
-    compileSdkVersion android.compileSdkVersion
+    compileSdk android.compileSdkVersion
     
 
     defaultConfig {
         minSdkVersion android.minSdkVersion
         targetSdkVersion android.targetSdkVersion
 
-        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
         consumerProguardFiles "consumer-rules.pro"
     }
 
+    buildFeatures {
+        viewBinding true
+    }
+    
     buildTypes {
         release {
             minifyEnabled true
@@ -24,28 +27,32 @@ android {
         }
     }
 
+    // Allow references to generated code
+    kapt {
+        correctErrorTypes true
+    }
+
     compileOptions {
-        sourceCompatibility = "1.8"
-        targetCompatibility = 1.8
+        sourceCompatibility = "17"
+        targetCompatibility = 17
     }
 
     kotlinOptions {
         freeCompilerArgs = ['-Xjvm-default=enable']
-        jvmTarget = JavaVersion.VERSION_1_8
+        jvmTarget = JavaVersion.VERSION_17
     }
+    namespace 'com.example.demo'
 }
 
 
 dependencies {
     implementation fileTree(dir: "libs", include: ["*.jar"])
 
-    testImplementation 'junit:junit:4.13.2'
-    androidTestImplementation 'androidx.test.ext:junit:1.1.3'
-    androidTestImplementation 'androidx.test.espresso:espresso-core:3.4.0'
+
     implementation project(':common_lib')
     implementation "com.google.dagger:hilt-android:$depVer.hilt"
-    kapt "com.google.dagger:hilt-android-compiler:$depVer.hilt"
-    implementation "androidx.hilt:hilt-lifecycle-viewmodel:$depVer.hilt_jetpack"
-    kapt "androidx.hilt:hilt-compiler:$depVer.hilt_jetpack"
+    kapt "com.google.dagger:hilt-compiler:$depVer.hilt"
+    
+    
 
 }

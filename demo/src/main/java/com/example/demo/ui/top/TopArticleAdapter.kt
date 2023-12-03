@@ -11,7 +11,7 @@ import com.example.demo.R
  */
 class TopArticleAdapter : BaseQuickAdapter<TopArticle, BaseViewHolder>(R.layout.item_top_article) {
 
-    override fun convert(helper: BaseViewHolder, bean: TopArticle) {
-        helper.setText(R.id.tvTitle, bean.chapterName)
+    override fun convert(holder: BaseViewHolder, item: TopArticle) {
+        holder.setText(R.id.tvTitle, item.chapterName)
     }
 }

@@ -27,7 +27,7 @@ object PreferencesUtil {
             is Long -> kv?.encode(key, value)
             is Double -> kv?.encode(key, value)
             is ByteArray -> kv?.encode(key, value)
-            is Nothing -> return
+            else -> return
         }
     }
 

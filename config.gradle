@@ -2,7 +2,7 @@ ext {
 
     kotlin_version = '1.8.0'
     android = [
-            compileSdkVersion: 33,
+            compileSdkVersion: 34,
             minSdkVersion    : 24,
             targetSdkVersion : 33,
             versionCode      : 1,
@@ -13,8 +13,8 @@ ext {
             hilt        : "2.44",
             hilt_jetpack: "1.0.0-alpha03",
 
-            arouter     : "1.5.1",
-            arouter_kapt: "1.2.2"
+            arouter     : "1.0.3",
+            arouter_kapt: "1.0.3"
     ]
 
 }

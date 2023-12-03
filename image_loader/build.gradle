@@ -5,7 +5,7 @@ apply plugin: 'kotlin-kapt'
 apply from: "../config.gradle"
 
 android {
-    compileSdkVersion android.compileSdkVersion
+    compileSdk android.compileSdkVersion
     
 
     defaultConfig {
@@ -17,6 +17,15 @@ android {
     buildFeatures {
         viewBinding true
     }
+    compileOptions {
+        sourceCompatibility = "17"
+        targetCompatibility = 17
+    }
+
+    kotlinOptions {
+        freeCompilerArgs = ['-Xjvm-default=enable']
+        jvmTarget = JavaVersion.VERSION_17
+    }
 
     buildTypes {
         release {
@@ -24,6 +33,7 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
+    namespace 'pers.pan.imageloader'
 }
 
 dependencies {

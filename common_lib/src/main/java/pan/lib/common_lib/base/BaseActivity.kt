@@ -9,25 +9,26 @@ import com.gyf.immersionbar.ImmersionBar
 import pan.lib.common_lib.R
 import pan.lib.common_lib.databinding.ActivityBaseBinding
 
-abstract class BaseActivity : AppCompatActivity() {
+abstract class BaseActivity: AppCompatActivity() {
 
-    private lateinit var binding: ActivityBaseBinding
+    private lateinit var baseBinding: ActivityBaseBinding
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding=ActivityBaseBinding.inflate(layoutInflater)
-        LayoutInflater.from(this).inflate(getLayoutId(), binding.viewContent)
+        baseBinding=ActivityBaseBinding.inflate(layoutInflater)
+        baseBinding.viewContent.addView(getLayout(layoutInflater))
+        setContentView(baseBinding.root)
         initStatusBar()
         initToolbar()
 
     }
 
     private fun initToolbar() {
-        setSupportActionBar(binding.commonToolbar);
+        setSupportActionBar(baseBinding.commonToolbar);
         supportActionBar?.setDisplayShowTitleEnabled(false)
     }
 
 
-    abstract fun getLayoutId(): Int
+    abstract fun getLayout(layoutInflater: LayoutInflater): View
 
     open fun initStatusBar() {
         ImmersionBar.with(this)
@@ -41,7 +42,7 @@ abstract class BaseActivity : AppCompatActivity() {
      * @param title
      */
     fun setTitle(title: String?) {
-        binding.tvTitle.text = title
+        baseBinding.tvTitle.text = title
 
     }
 
@@ -50,17 +51,17 @@ abstract class BaseActivity : AppCompatActivity() {
      * @param resId
      */
     override fun setTitle(@StringRes resId: Int) {
-        binding.tvTitle.setText(resId)
+        baseBinding.tvTitle.setText(resId)
     }
 
     fun enableBack() {
         supportActionBar?.setDisplayHomeAsUpEnabled(true)//左侧添加一个默认的返回图标
         supportActionBar?.setDisplayShowHomeEnabled(true)//设置返回键可用
-        binding.commonToolbar.setNavigationOnClickListener { finish() }
+        baseBinding.commonToolbar.setNavigationOnClickListener { finish() }
     }
 
 
     open fun showToolbar(isShowing: Boolean) {
-        binding.commonToolbar.visibility = if (isShowing) View.VISIBLE else View.GONE
+        baseBinding.commonToolbar.visibility = if (isShowing) View.VISIBLE else View.GONE
     }
 }

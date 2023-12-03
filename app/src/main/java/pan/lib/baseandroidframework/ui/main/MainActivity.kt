@@ -1,20 +1,21 @@
 package pan.lib.baseandroidframework.ui.main
 
 import android.os.Bundle
+import android.view.LayoutInflater
+import android.view.View
 import com.example.demo.ui.top.TopArticleActivity
-import kotlinx.android.synthetic.main.activity_main.*
 import org.jetbrains.anko.startActivity
-import pan.lib.baseandroidframework.R
+import pan.lib.baseandroidframework.databinding.ActivityMainBinding
 import pan.lib.common_lib.base.BaseActivity
 
 class MainActivity : BaseActivity() {
 
-
+    private lateinit var binding: ActivityMainBinding
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
         setTitle("首页")
-        btNet.setOnClickListener {
+        binding.btNet.setOnClickListener {
             startActivity<TopArticleActivity>()
         }
 
@@ -26,5 +27,10 @@ class MainActivity : BaseActivity() {
 //            })
     }
 
-    override fun getLayoutId() = R.layout.activity_main
+
+    override fun getLayout(layoutInflater: LayoutInflater): View {
+        binding = ActivityMainBinding.inflate(layoutInflater)
+        return binding.root
+    }
+
 }

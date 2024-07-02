@@ -1,7 +1,6 @@
 apply plugin: 'com.android.library'
 apply plugin: 'kotlin-android'
-
-apply plugin: 'kotlin-kapt'
+apply plugin: 'com.google.devtools.ksp'
 apply from: "../config.gradle"
 
 android {
@@ -37,9 +36,9 @@ android {
 
 dependencies {
     implementation fileTree(dir: "libs", include: ["*.jar"])
-    implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
-    implementation 'com.github.bumptech.glide:glide:4.11.0'
-    implementation 'jp.wasabeef:glide-transformations:4.1.0'
-    kapt 'com.github.bumptech.glide:compiler:4.11.0'
+    implementation libs.kotlin.stdlib
+    implementation libs.glide
+    ksp libs.glide.ksp
+    implementation libs.glide.transformations
 
 }

@@ -1,0 +1,94 @@
+[versions]
+agp = "8.5.0"
+glide = "4.16.0"
+glideTransformations = "4.1.0"
+kotlin = "2.0.0"
+kotlinStdlib = "2.0.0"
+ksp="2.0.0-1.0.22"
+kapt = "2.0.0"
+hilt = "2.51.1"
+coreKtx = "1.13.1"
+appcompat = "1.7.0"
+material = "1.12.0"
+constraintlayout = "2.1.4"
+permissionx = "1.7.1"
+minSdk = "24"
+targetSdk = "33"
+compileSdkVersion = "34"
+
+
+activity = "1.8.0"
+lifecycleExtensions = "2.2.0"
+lifecycleViewmodelKtx = "2.8.3"
+fragmentKtx = "1.8.1"
+coroutinesCore = "1.7.3"
+anko = "0.10.8"
+multidex = "2.0.1"
+preferenceKtx = "1.2.1"
+gson = "2.10.1"
+kotson = "2.5.0"
+eventbus = "3.2.0"
+baseRecyclerViewAdapterHelper = "3.0.4"
+dividerItemDecoration = "2.0"
+permission = "2.0.3"
+retrofit = "2.9.0"
+retrofitGsonConverter = "2.9.0"
+loggingInterceptor = "4.8.1"
+toast = "8.2"
+logger = "2.2.0"
+immersionbar = "3.0.0"
+mmkvStatic = "1.2.2"
+okhttp = "4.11.0"
+mockwebserver = "4.11.0"
+scarlet = "0.1.12"
+arouterApi = "1.0.3"
+
+[libraries]
+androidx-annotation = { group = "androidx.annotation", name = "annotation", version = "1.8.0" }
+androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
+androidx-appcompat = { group = "androidx.appcompat", name = "appcompat", version.ref = "appcompat" }
+glide = { module = "com.github.bumptech.glide:glide", version.ref = "glide" }
+glide-ksp = { module = "com.github.bumptech.glide:ksp", version.ref = "glide" }
+glide-transformations = { module = "jp.wasabeef:glide-transformations", version.ref = "glideTransformations" }
+kotlin-stdlib = { module = "org.jetbrains.kotlin:kotlin-stdlib", version.ref = "kotlinStdlib" }
+material = { group = "com.google.android.material", name = "material", version.ref = "material" }
+androidx-constraintlayout = { group = "androidx.constraintlayout", name = "constraintlayout", version.ref = "constraintlayout" }
+androidx-lifecycle-extensions = { group = "androidx.lifecycle", name = "lifecycle-extensions", version.ref = "lifecycleExtensions" }
+androidx-lifecycle-viewmodel-ktx = { group = "androidx.lifecycle", name = "lifecycle-viewmodel-ktx", version.ref = "lifecycleViewmodelKtx" }
+androidx-fragment-ktx = { group = "androidx.fragment", name = "fragment-ktx", version.ref = "fragmentKtx" }
+org-jetbrains-kotlinx-coroutines-core = { group = "org.jetbrains.kotlinx", name = "kotlinx-coroutines-core", version.ref = "coroutinesCore" }
+org-jetbrains-anko = { group = "org.jetbrains.anko", name = "anko", version.ref = "anko" }
+androidx-multidex = { group = "androidx.multidex", name = "multidex", version.ref = "multidex" }
+androidx-preference-ktx = { group = "androidx.preference", name = "preference-ktx", version.ref = "preferenceKtx" }
+com-google-gson = { group = "com.google.code.gson", name = "gson", version.ref = "gson" }
+com-github-salomonbrys-kotson = { group = "com.github.salomonbrys.kotson", name = "kotson", version.ref = "kotson" }
+org-greenrobot-eventbus = { group = "org.greenrobot", name = "eventbus", version.ref = "eventbus" }
+baseRecyclerViewAdapterHelper = { group = "com.github.CymChad", name = "BaseRecyclerViewAdapterHelper", version.ref = "baseRecyclerViewAdapterHelper" }
+com-yanyusong-y-divideritemdecoration = { group = "com.yanyusong.y_divideritemdecoration", name = "y_divideritemdecoration", version.ref = "dividerItemDecoration" }
+com-yanzhenjie-permission = { group = "com.yanzhenjie", name = "permission", version.ref = "permission" }
+com-squareup-retrofit2-retrofit = { group = "com.squareup.retrofit2", name = "retrofit", version.ref = "retrofit" }
+com-squareup-retrofit2-converter-gson = { group = "com.squareup.retrofit2", name = "converter-gson", version.ref = "retrofitGsonConverter" }
+com-squareup-okhttp3-logging-interceptor = { group = "com.squareup.okhttp3", name = "logging-interceptor", version.ref = "loggingInterceptor" }
+com-hjq-toast = { group = "com.hjq", name = "toast", version.ref = "toast" }
+com-orhanobut-logger = { group = "com.orhanobut", name = "logger", version.ref = "logger" }
+arouter-api = { group = "com.github.jadepeakpoet.ARouter", name = "arouter-api", version.ref = "arouterApi" }
+arouter-compiler = { group = "com.github.jadepeakpoet.ARouter", name = "arouter-compiler", version.ref = "arouterApi" }
+
+com-gyf-immersionbar = { group = "com.gyf.immersionbar", name = "immersionbar", version.ref = "immersionbar" }
+com-tencent-mmkv-static = { group = "com.tencent", name = "mmkv-static", version.ref = "mmkvStatic" }
+com-squareup-okhttp3 = { group = "com.squareup.okhttp3", name = "okhttp", version.ref = "okhttp" }
+com-squareup-okhttp3-mockwebserver = { group = "com.squareup.okhttp3", name = "mockwebserver", version.ref = "mockwebserver" }
+com-tinder-scarlet = { group = "com.tinder.scarlet", name = "scarlet", version.ref = "scarlet" }
+com-tinder-scarlet-websocket-okhttp = { group = "com.tinder.scarlet", name = "websocket-okhttp", version.ref = "scarlet" }
+com-tinder-scarlet-message-adapter-gson = { group = "com.tinder.scarlet", name = "message-adapter-gson", version.ref = "scarlet" }
+com-tinder-scarlet-stream-adapter-rxjava2 = { group = "com.tinder.scarlet", name = "stream-adapter-rxjava2", version.ref = "scarlet" }
+hilt-android = { group = "com.google.dagger", name = "hilt-android", version.ref = "hilt" }
+hilt-compiler = { group = "com.google.dagger", name = "hilt-compiler", version.ref = "hilt" }
+
+[plugins]
+androidApplication = { id = "com.android.application", version.ref = "agp" }
+kotlinAndroid = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
+androidLibrary = { id = "com.android.library", version.ref = "agp" }
+kotlinKsp = { id = "com.google.devtools.ksp", version.ref ="ksp" }
+daggerHiltAndroidPlugin = { id = "com.google.dagger.hilt.android", version.ref = "hilt" }
+kotlinKapt = { id = "org.jetbrains.kotlin.kapt", version.ref = "kapt" }

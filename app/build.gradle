@@ -60,14 +60,15 @@ android {
     }
 
     kotlinOptions {
-        freeCompilerArgs = ['-Xjvm-default=enable']
         jvmTarget = JavaVersion.VERSION_17
     }
     namespace 'pan.lib.baseandroidframework'
     lint {
         disable 'Instantiatable'
     }
-
+    hilt {
+        enableAggregatingTask = false
+    }
 
 }
 

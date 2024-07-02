@@ -23,7 +23,6 @@ android {
     }
 
     kotlinOptions {
-        freeCompilerArgs = ['-Xjvm-default=enable']
         jvmTarget = JavaVersion.VERSION_17
     }
 

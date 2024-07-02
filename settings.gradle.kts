@@ -24,6 +24,5 @@ dependencyResolutionManagement {
 rootProject.name = "BaseAndroidFramework"
 include(":app")
 include(":common_lib")
-include(":image_loader")
 include(":demo")
 

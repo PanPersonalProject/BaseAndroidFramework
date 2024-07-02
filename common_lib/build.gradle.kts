@@ -36,7 +36,6 @@ android {
 
 dependencies {
     api(fileTree(mapOf("dir" to "libs", "include" to listOf("*.jar"))))
-    api(project(":image_loader"))
     api(libs.material)
     api(libs.androidx.annotation)
     api(libs.androidx.lifecycle.extensions)
@@ -54,6 +53,9 @@ dependencies {
     ksp(libs.hilt.compiler)
 
     // Third-party libraries
+    api(libs.glide)
+    ksp(libs.glide.ksp)
+    api(libs.glide.transformations)
     api(libs.com.google.gson)
     api(libs.com.github.salomonbrys.kotson)
     api(libs.org.greenrobot.eventbus)

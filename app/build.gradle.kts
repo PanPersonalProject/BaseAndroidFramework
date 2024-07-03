@@ -70,9 +70,10 @@ android {
 
 dependencies {
     implementation(fileTree(mapOf("dir" to "libs", "include" to listOf("*.jar"))))
-    implementation(project(":common_lib"))
     implementation(project(":demo"))
 
+    implementation(project(":common_lib"))
+//    implementation(libs.baseAndroidFramework)
     implementation(libs.hilt.android)
     ksp(libs.hilt.compiler)
     kapt(libs.arouter.compiler)

@@ -33,6 +33,12 @@ android {
         jvmTarget = "17"
     }
 
+    publishing {
+        singleVariant("release") {
+            withSourcesJar()
+            withJavadocJar()
+        }
+    }
 }
 
 dependencies {
@@ -80,22 +86,18 @@ dependencies {
     implementation(libs.com.tinder.scarlet.stream.adapter.rxjava2)
 }
 
-// 注意 这边配置的groupId artifactId version 实际测试只对本地mavenLocal生效
-// jitpack点击发布貌似不会采纳 而是 根据 com.github.userName:projectName:Tag的格式
-// 因此 本地配置的版本和远程配置的版本请完全对应 (本段内容也不能丢失) 貌似的原理是github在远端服务器 的mavenLocal
-// 生成文件 然后映射相关文件 到 指定的格式
 
-//publishing { // 发布配置
-//    publications { // 发布的内容
-//        register<MavenPublication>("release") { // 注册一个名字为 release 的发布内容
-//            groupId = "com.github.PanPersonalProject"
-//            artifactId = "common_lib"
-//            version = "V1.0.0-SNAPSHOT"
-//
-//            afterEvaluate { // 在所有的配置都完成之后执行
-//                // 从当前 module 的 release 包中发布
-//                from(components["release"])
-//            }
-//        }
-//    }
-//}
+publishing { // 发布配置
+    publications { // 发布的内容
+        register<MavenPublication>("release") { // 注册一个名字为 release 的发布内容
+            groupId = "com.github.PanPersonalProject"
+            artifactId = "common_lib"
+            version = "1.0.0"
+
+            afterEvaluate { // 在所有的配置都完成之后执行
+                // 从当前 module 的 release 包中发布
+                from(components["release"])
+            }
+        }
+    }
+}

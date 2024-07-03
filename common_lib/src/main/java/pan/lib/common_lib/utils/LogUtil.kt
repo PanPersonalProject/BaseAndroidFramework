@@ -1,5 +1,6 @@
 package pan.lib.common_lib.utils
 
+import android.util.Log
 import com.orhanobut.logger.AndroidLogAdapter
 import com.orhanobut.logger.FormatStrategy
 import com.orhanobut.logger.Logger
@@ -42,4 +43,8 @@ fun printLog(any: Any?) {
 fun printLogWithTag(tag: String, any: Any?) {
     Logger.t(tag).d(any)
 
+}
+
+fun printSimpleLog(any: Any?) {
+    Log.e(LOGGER_GENERAL_TAG, any.toString())
 }

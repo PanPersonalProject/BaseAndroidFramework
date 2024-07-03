@@ -1,5 +1,6 @@
 package pan.lib.common_lib.utils;
 
+import android.content.res.Resources;
 import android.view.Window;
 import android.view.WindowManager;
 
@@ -25,5 +26,8 @@ public class WindowUtil {
         window.setAttributes(attributes);
     }
 
+    public static float getZForCamera() {
+        return - 6 * Resources.getSystem().getDisplayMetrics().density;
+    }
 
 }

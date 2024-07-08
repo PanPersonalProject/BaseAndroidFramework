@@ -3,8 +3,7 @@ package pan.lib.baseandroidframework.ui.main
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
-import com.example.demo.ui.top.TopArticleActivity
-import org.jetbrains.anko.startActivity
+import com.therouter.TheRouter
 import pan.lib.baseandroidframework.databinding.ActivityMainBinding
 import pan.lib.common_lib.base.BaseActivity
 
@@ -16,15 +15,9 @@ class MainActivity : BaseActivity() {
 
         setTitle("首页")
         binding.btNet.setOnClickListener {
-            startActivity<TopArticleActivity>()
+            TheRouter.build("/demo/TopArticleActivity")
+                .navigation(this)
         }
-
-//        requestPermission(this, Permission.Group.STORAGE,
-//            {
-//
-//            }, {
-//                toast("fail $it")
-//            })
     }
 
 

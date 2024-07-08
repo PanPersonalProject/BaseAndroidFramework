@@ -13,7 +13,7 @@
   - ViewModel 
 
 - [Retrofit2 & OkHttp3](https://github.com/square/retrofit) -retrofit2.9.0搭配协程
-- [Arouter](https://github.com/alibaba/ARouter) -跨模块通信框架
+- [TheRouter](https://github.com/HuolalaTech/hll-wp-therouter-android -跨模块通信框架
 - [Glide](https://github.com/bumptech/glide), [Glide Transformations](https://github.com/wasabeef/glide-transformations)
 - [Logger](https://github.com/orhanobut/logger) - Simple, pretty and powerful logger for android
 - [BaseRecyclerViewAdapterHelper](https://github.com/CymChad/BaseRecyclerViewAdapterHelper) - 强大而灵活的RecyclerView Adapter

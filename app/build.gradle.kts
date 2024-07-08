@@ -3,7 +3,7 @@ plugins {
     alias(libs.plugins.kotlinAndroid)
     alias(libs.plugins.kotlinKsp)
     alias(libs.plugins.daggerHiltAndroidPlugin)
-    id("org.jetbrains.kotlin.kapt")
+    id ("therouter")
 }
 android {
     namespace = "pan.lib.baseandroidframework"
@@ -20,12 +20,6 @@ android {
             abiFilters.add("arm64-v8a")
         }
 
-        kapt {
-            arguments {
-                arg("AROUTER_MODULE_NAME", project.name)
-            }
-            correctErrorTypes = true
-        }
     }
 
     signingConfigs {
@@ -76,5 +70,5 @@ dependencies {
 //    implementation(libs.baseAndroidFramework)
     implementation(libs.hilt.android)
     ksp(libs.hilt.compiler)
-    kapt(libs.arouter.compiler)
+    ksp (libs.therouter.apt)
 }

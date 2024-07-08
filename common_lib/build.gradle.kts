@@ -3,7 +3,6 @@ plugins {
     alias(libs.plugins.kotlinAndroid)
     alias(libs.plugins.kotlinKsp)
     alias(libs.plugins.daggerHiltAndroidPlugin)
-    id("org.jetbrains.kotlin.kapt")
     id("maven-publish")
 }
 
@@ -74,7 +73,7 @@ dependencies {
     api(libs.com.squareup.okhttp3.logging.interceptor)
     api(libs.com.hjq.toast)
     api(libs.com.orhanobut.logger)
-    api(libs.arouter.api)
+    api(libs.router)
     api(libs.com.gyf.immersionbar)
     implementation(libs.com.tencent.mmkv.static)
 

@@ -6,6 +6,7 @@ import android.view.View
 import androidx.annotation.StringRes
 import androidx.appcompat.app.AppCompatActivity
 import com.gyf.immersionbar.ImmersionBar
+import com.therouter.TheRouter
 import pan.lib.common_lib.R
 import pan.lib.common_lib.databinding.ActivityBaseBinding
 
@@ -14,6 +15,7 @@ abstract class BaseActivity: AppCompatActivity() {
     private lateinit var baseBinding: ActivityBaseBinding
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        TheRouter.inject(this)
         baseBinding=ActivityBaseBinding.inflate(layoutInflater)
         baseBinding.viewContent.addView(getLayout(layoutInflater))
         setContentView(baseBinding.root)

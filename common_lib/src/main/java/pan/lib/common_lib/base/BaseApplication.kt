@@ -2,9 +2,8 @@ package pan.lib.common_lib.base
 
 import android.content.Context
 import androidx.multidex.MultiDexApplication
-import com.alibaba.android.arouter.launcher.ARouter
 import com.tencent.mmkv.MMKV
-import pan.lib.common_lib.BuildConfig
+import com.therouter.TheRouter
 import pan.lib.common_lib.utils.initLogger
 
 
@@ -28,18 +27,16 @@ abstract class BaseApplication : MultiDexApplication() {
         instance = this
         initLogger()
         initMMKV()
-        initARouter()
+    }
+
+    override fun attachBaseContext(base: Context?) {
+        TheRouter.isDebug=true
+        super.attachBaseContext(base)
     }
 
     private fun initMMKV() {
         MMKV.initialize(this)
     }
 
-    private fun initARouter() {
-        if (BuildConfig.DEBUG) {
-            ARouter.openLog()
-            ARouter.openDebug()
-        }
-        ARouter.init(this)
-    }
+
 }

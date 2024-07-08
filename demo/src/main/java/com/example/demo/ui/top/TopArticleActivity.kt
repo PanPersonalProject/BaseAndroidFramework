@@ -6,9 +6,11 @@ import android.view.View
 import androidx.activity.viewModels
 import com.example.demo.R
 import com.example.demo.databinding.ActivityTopArticleBinding
+import com.therouter.router.Route
 import dagger.hilt.android.AndroidEntryPoint
 import pan.lib.common_lib.base.BaseActivity
 
+@Route(path = "/demo/TopArticleActivity")
 @AndroidEntryPoint
 class TopArticleActivity : BaseActivity() {
     private val topArticleViewModel: TopArticleViewModel by viewModels()

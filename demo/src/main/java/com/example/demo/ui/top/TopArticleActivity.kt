@@ -17,7 +17,7 @@ class TopArticleActivity : BaseActivity() {
     private lateinit var binding: ActivityTopArticleBinding
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setTitle(R.string.top_article)
+        setTitle(R.string.article)
         enableBack()
         initView()
 

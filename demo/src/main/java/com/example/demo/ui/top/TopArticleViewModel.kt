@@ -2,7 +2,7 @@ package com.example.demo.ui.top
 
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import com.example.demo.pojo.TopArticle
+import com.example.demo.pojo.Article
 import com.example.demo.repository.ArticleRepository
 import dagger.hilt.android.lifecycle.HiltViewModel
 import pan.lib.common_lib.utils.ext.launchOnUI
@@ -18,14 +18,14 @@ class TopArticleViewModel @Inject constructor(private val articleRepository: Art
     ViewModel() {
 
 
-    val articleList = MutableLiveData<MutableList<TopArticle>>()
+    val articleList = MutableLiveData<MutableList<Article>>()
 
     fun fetchTopArticle() {
         launchOnUI {
             val response = articleRepository.fetchTopArticle()
 
             response.whenSuccess {
-                articleList.value = it.toMutableList()
+                articleList.value = it.datas.toMutableList()
             }
 
         }

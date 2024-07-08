@@ -39,6 +39,4 @@ dependencies {
 //    implementation(libs.baseAndroidFramework)
     implementation(libs.hilt.android)
     ksp(libs.hilt.compiler)
-    ksp (libs.therouter.apt)
-
 }

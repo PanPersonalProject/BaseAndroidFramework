@@ -4,7 +4,8 @@ package com.example.demo.pojo
  * author: Pan
  * date: 2020/7/12
  */
-data class TopArticle(
+data class Article(
+    val adminAdd: Boolean,
     val apkLink: String,
     val audit: Int,
     val author: String,
@@ -17,7 +18,9 @@ data class TopArticle(
     val descMd: String,
     val envelopePic: String,
     val fresh: Boolean,
+    val host: String,
     val id: Int,
+    val isAdminAdd: Boolean,
     val link: String,
     val niceDate: String,
     val niceShareDate: String,

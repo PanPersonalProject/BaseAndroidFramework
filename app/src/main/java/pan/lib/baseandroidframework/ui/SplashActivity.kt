@@ -25,6 +25,7 @@ class SplashActivity : BaseActivity() {
             }, 2000)
         } else {
             startActivity<MainActivity>()
+            finish()
         }
 
 

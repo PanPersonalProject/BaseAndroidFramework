@@ -86,5 +86,5 @@ object WanNetModule {
 ```
 
 ## 架构图
-![](https://user-gold-cdn.xitu.io/2020/7/14/1734cc4fe9f146e7?w=798&h=695&f=png&s=35270)
+![](architecture.png)
 

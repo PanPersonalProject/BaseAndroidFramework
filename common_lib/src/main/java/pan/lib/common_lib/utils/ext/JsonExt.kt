@@ -9,7 +9,7 @@ import com.google.gson.Gson
  * CreateDate:     2020/6/9 14:32
  * 扩展时参考 https://github.com/SalomonBrys/Kotson
  */
-fun Any.toJson(): String? = Gson().toJson(this)
+fun Any.toJson(): String = Gson().toJson(this)
 
 
 inline fun <reified T : Any> String.toObject(): T = Gson().fromJson(this)

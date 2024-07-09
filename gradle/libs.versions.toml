@@ -2,6 +2,7 @@
 agp = "8.5.0"
 glide = "4.16.0"
 glideTransformations = "4.1.0"
+junit = "4.13.2"
 kotlin = "2.0.0"
 kotlinStdlib = "2.0.0"
 ksp="2.0.0-1.0.22"
@@ -17,7 +18,6 @@ targetSdk = "33"
 compileSdkVersion = "34"
 
 
-activity = "1.8.0"
 lifecycleExtensions = "2.2.0"
 lifecycleViewmodelKtx = "2.8.3"
 fragmentKtx = "1.8.1"
@@ -31,15 +31,13 @@ eventbus = "3.2.0"
 baseRecyclerViewAdapterHelper = "3.0.4"
 dividerItemDecoration = "2.0"
 permission = "2.0.3"
-retrofit = "2.9.0"
-retrofitGsonConverter = "2.9.0"
+retrofit = "2.11.0"
+retrofitGsonConverter = "2.11.0"
 loggingInterceptor = "4.8.1"
-toast = "8.2"
 logger = "2.2.0"
 immersionbar = "3.0.0"
 mmkvStatic = "1.2.2"
-okhttp = "4.11.0"
-mockwebserver = "4.11.0"
+okhttp = "4.12.0"
 scarlet = "0.1.12"
 therouter = "1.2.2"
 baseAndroidFramework="1.0.0"
@@ -48,6 +46,7 @@ baseAndroidFramework="1.0.0"
 androidx-annotation = { group = "androidx.annotation", name = "annotation", version = "1.8.0" }
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
 androidx-appcompat = { group = "androidx.appcompat", name = "appcompat", version.ref = "appcompat" }
+junit = { module = "junit:junit", version.ref = "junit" }
 therouter-apt = { module = "cn.therouter:apt", version.ref = "therouter" }
 glide = { module = "com.github.bumptech.glide:glide", version.ref = "glide" }
 glide-ksp = { module = "com.github.bumptech.glide:ksp", version.ref = "glide" }
@@ -71,17 +70,17 @@ com-yanzhenjie-permission = { group = "com.yanzhenjie", name = "permission", ver
 com-squareup-retrofit2-retrofit = { group = "com.squareup.retrofit2", name = "retrofit", version.ref = "retrofit" }
 com-squareup-retrofit2-converter-gson = { group = "com.squareup.retrofit2", name = "converter-gson", version.ref = "retrofitGsonConverter" }
 com-squareup-okhttp3-logging-interceptor = { group = "com.squareup.okhttp3", name = "logging-interceptor", version.ref = "loggingInterceptor" }
-com-hjq-toast = { group = "com.hjq", name = "toast", version.ref = "toast" }
 com-orhanobut-logger = { group = "com.orhanobut", name = "logger", version.ref = "logger" }
 
 com-gyf-immersionbar = { group = "com.gyf.immersionbar", name = "immersionbar", version.ref = "immersionbar" }
 com-tencent-mmkv-static = { group = "com.tencent", name = "mmkv-static", version.ref = "mmkvStatic" }
 com-squareup-okhttp3 = { group = "com.squareup.okhttp3", name = "okhttp", version.ref = "okhttp" }
-com-squareup-okhttp3-mockwebserver = { group = "com.squareup.okhttp3", name = "mockwebserver", version.ref = "mockwebserver" }
+com-squareup-okhttp3-mockwebserver = { group = "com.squareup.okhttp3", name = "mockwebserver", version.ref = "okhttp" }
 com-tinder-scarlet = { group = "com.tinder.scarlet", name = "scarlet", version.ref = "scarlet" }
 com-tinder-scarlet-websocket-okhttp = { group = "com.tinder.scarlet", name = "websocket-okhttp", version.ref = "scarlet" }
 com-tinder-scarlet-message-adapter-gson = { group = "com.tinder.scarlet", name = "message-adapter-gson", version.ref = "scarlet" }
 com-tinder-scarlet-stream-adapter-rxjava2 = { group = "com.tinder.scarlet", name = "stream-adapter-rxjava2", version.ref = "scarlet" }
+com-tinder-scarlet-lifecycle-android = { group = "com.tinder.scarlet", name = "lifecycle-android", version.ref = "scarlet" }
 hilt-android = { group = "com.google.dagger", name = "hilt-android", version.ref = "hilt" }
 hilt-compiler = { group = "com.google.dagger", name = "hilt-compiler", version.ref = "hilt" }
 baseAndroidFramework= { group = "com.github.PanPersonalProject", name = "BaseAndroidFramework", version.ref = "baseAndroidFramework" }

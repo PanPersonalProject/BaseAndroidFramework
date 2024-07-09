@@ -34,9 +34,10 @@ dependencies {
     implementation(
         fileTree(mapOf("dir" to "libs", "include" to listOf("*.jar")))
     )
-
+    implementation(libs.junit)
     implementation(project(":common_lib"))
 //    implementation(libs.baseAndroidFramework)
     implementation(libs.hilt.android)
     ksp(libs.hilt.compiler)
+    ksp (libs.therouter.apt)
 }

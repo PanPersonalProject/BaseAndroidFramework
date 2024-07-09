@@ -14,8 +14,13 @@ class MainActivity : BaseActivity() {
         super.onCreate(savedInstanceState)
 
         setTitle("首页")
-        binding.btNet.setOnClickListener {
+        binding.btRouter.setOnClickListener {
             TheRouter.build("/demo/TopArticleActivity")
+                .navigation(this)
+        }
+
+        binding.btWebsocket.setOnClickListener {
+            TheRouter.build("/demo/WebsocketDemoActivity")
                 .navigation(this)
         }
     }

@@ -71,18 +71,18 @@ dependencies {
     api(libs.com.squareup.retrofit2.retrofit)
     api(libs.com.squareup.retrofit2.converter.gson)
     api(libs.com.squareup.okhttp3.logging.interceptor)
-    api(libs.com.hjq.toast)
     api(libs.com.orhanobut.logger)
     api(libs.router)
     api(libs.com.gyf.immersionbar)
     implementation(libs.com.tencent.mmkv.static)
 
-    implementation(libs.com.squareup.okhttp3)
-    implementation(libs.com.squareup.okhttp3.mockwebserver)
-    implementation(libs.com.tinder.scarlet)
-    implementation(libs.com.tinder.scarlet.websocket.okhttp)
-    implementation(libs.com.tinder.scarlet.message.adapter.gson)
-    implementation(libs.com.tinder.scarlet.stream.adapter.rxjava2)
+    api(libs.com.squareup.okhttp3)
+    api(libs.com.squareup.okhttp3.mockwebserver)
+    api(libs.com.tinder.scarlet)
+    api(libs.com.tinder.scarlet.websocket.okhttp)
+    api(libs.com.tinder.scarlet.message.adapter.gson)
+    api(libs.com.tinder.scarlet.stream.adapter.rxjava2)
+    api(libs.com.tinder.scarlet.lifecycle.android)
 }
 
 

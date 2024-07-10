@@ -4,15 +4,12 @@ glide = "4.16.0"
 glideTransformations = "4.1.0"
 junit = "4.13.2"
 kotlin = "2.0.0"
-kotlinStdlib = "2.0.0"
-ksp="2.0.0-1.0.22"
-kapt = "2.0.0"
+ksp = "2.0.0-1.0.22"
 hilt = "2.51.1"
 coreKtx = "1.13.1"
 appcompat = "1.7.0"
 material = "1.12.0"
 constraintlayout = "2.1.4"
-permissionx = "1.7.1"
 minSdk = "24"
 targetSdk = "33"
 compileSdkVersion = "34"
@@ -40,7 +37,7 @@ mmkvStatic = "1.2.2"
 okhttp = "4.12.0"
 scarlet = "0.1.12"
 therouter = "1.2.2"
-baseAndroidFramework="1.0.0"
+baseAndroidFramework = "1.1.0"
 
 [libraries]
 androidx-annotation = { group = "androidx.annotation", name = "annotation", version = "1.8.0" }
@@ -51,7 +48,6 @@ therouter-apt = { module = "cn.therouter:apt", version.ref = "therouter" }
 glide = { module = "com.github.bumptech.glide:glide", version.ref = "glide" }
 glide-ksp = { module = "com.github.bumptech.glide:ksp", version.ref = "glide" }
 glide-transformations = { module = "jp.wasabeef:glide-transformations", version.ref = "glideTransformations" }
-kotlin-stdlib = { module = "org.jetbrains.kotlin:kotlin-stdlib", version.ref = "kotlinStdlib" }
 material = { group = "com.google.android.material", name = "material", version.ref = "material" }
 androidx-constraintlayout = { group = "androidx.constraintlayout", name = "constraintlayout", version.ref = "constraintlayout" }
 androidx-lifecycle-extensions = { group = "androidx.lifecycle", name = "lifecycle-extensions", version.ref = "lifecycleExtensions" }
@@ -71,7 +67,6 @@ com-squareup-retrofit2-retrofit = { group = "com.squareup.retrofit2", name = "re
 com-squareup-retrofit2-converter-gson = { group = "com.squareup.retrofit2", name = "converter-gson", version.ref = "retrofitGsonConverter" }
 com-squareup-okhttp3-logging-interceptor = { group = "com.squareup.okhttp3", name = "logging-interceptor", version.ref = "loggingInterceptor" }
 com-orhanobut-logger = { group = "com.orhanobut", name = "logger", version.ref = "logger" }
-
 com-gyf-immersionbar = { group = "com.gyf.immersionbar", name = "immersionbar", version.ref = "immersionbar" }
 com-tencent-mmkv-static = { group = "com.tencent", name = "mmkv-static", version.ref = "mmkvStatic" }
 com-squareup-okhttp3 = { group = "com.squareup.okhttp3", name = "okhttp", version.ref = "okhttp" }
@@ -83,13 +78,13 @@ com-tinder-scarlet-stream-adapter-rxjava2 = { group = "com.tinder.scarlet", name
 com-tinder-scarlet-lifecycle-android = { group = "com.tinder.scarlet", name = "lifecycle-android", version.ref = "scarlet" }
 hilt-android = { group = "com.google.dagger", name = "hilt-android", version.ref = "hilt" }
 hilt-compiler = { group = "com.google.dagger", name = "hilt-compiler", version.ref = "hilt" }
-baseAndroidFramework= { group = "com.github.PanPersonalProject", name = "BaseAndroidFramework", version.ref = "baseAndroidFramework" }
+baseAndroidFramework = { group = "com.github.PanPersonalProject", name = "BaseAndroidFramework", version.ref = "baseAndroidFramework" }
 router = { module = "cn.therouter:router", version.ref = "therouter" }
 
 [plugins]
 androidApplication = { id = "com.android.application", version.ref = "agp" }
 kotlinAndroid = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
 androidLibrary = { id = "com.android.library", version.ref = "agp" }
-kotlinKsp = { id = "com.google.devtools.ksp", version.ref ="ksp" }
+kotlinKsp = { id = "com.google.devtools.ksp", version.ref = "ksp" }
 daggerHiltAndroidPlugin = { id = "com.google.dagger.hilt.android", version.ref = "hilt" }
 theRouter = { id = "cn.therouter.agp8", version.ref = "therouter" }

@@ -1,7 +1,6 @@
 package com.example.demo.repository
 
-import com.example.demo.WanApiService
-import com.example.demo.pojo.Article
+import com.example.demo.service.WanApiService
 import com.example.demo.pojo.ArticlesData
 import pan.lib.common_lib.base.BaseRepository
 import pan.lib.common_lib.retrofit.NetResult

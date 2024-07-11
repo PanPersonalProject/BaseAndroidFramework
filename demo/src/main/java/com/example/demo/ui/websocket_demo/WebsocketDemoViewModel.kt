@@ -5,7 +5,7 @@ import android.util.Log
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.example.DemoWebsocketService
+import com.example.demo.service.DemoWebsocketService
 import com.example.demo.mockwebserver.MockWebSocket
 import com.tinder.scarlet.Message
 import com.tinder.scarlet.WebSocket

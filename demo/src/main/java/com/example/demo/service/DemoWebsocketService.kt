@@ -1,5 +1,6 @@
-package com.example
+package com.example.demo.service
 
+import androidx.annotation.Keep
 import com.tinder.scarlet.ws.Receive
 import com.tinder.scarlet.ws.Send
 import io.reactivex.Flowable
@@ -11,6 +12,7 @@ import com.tinder.scarlet.WebSocket
  * @author pan qi
  * @since 2024/7/9
  */
+@Keep
 interface DemoWebsocketService {
     @Send
     fun send(protocol: Protocol)

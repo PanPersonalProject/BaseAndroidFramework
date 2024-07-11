@@ -1,6 +1,6 @@
 package com.example.demo.di
 
-import com.example.demo.WanApiService
+import com.example.demo.service.WanApiService
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn

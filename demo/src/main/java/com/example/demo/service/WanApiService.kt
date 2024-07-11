@@ -1,6 +1,5 @@
-package com.example.demo
+package com.example.demo.service
 
-import com.example.demo.pojo.Article
 import com.example.demo.pojo.ArticlesData
 import com.example.demo.pojo.WanResponse
 import retrofit2.http.GET

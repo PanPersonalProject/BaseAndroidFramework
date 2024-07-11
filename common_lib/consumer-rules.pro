@@ -16,16 +16,29 @@
 -keep enum org.greenrobot.eventbus.ThreadMode { *; }
 
 
-#ARouter
--keep public class com.alibaba.android.arouter.routes.**{*;}
--keep public class com.alibaba.android.arouter.facade.**{*;}
--keep class * implements com.alibaba.android.arouter.facade.template.ISyringe{*;}
+#TheRouter
+-keep class androidx.annotation.Keep
+-keep @androidx.annotation.Keep class * {*;}
+-keepclassmembers class * {
+    @androidx.annotation.Keep *;
+}
+-keepclasseswithmembers class * {
+    @androidx.annotation.Keep <methods>;
+}
+-keepclasseswithmembers class * {
+    @androidx.annotation.Keep <fields>;
+}
+-keepclasseswithmembers class * {
+    @androidx.annotation.Keep <init>(...);
+}
+-keepclasseswithmembers class * {
+    @com.therouter.router.Autowired <fields>;
+}
 
-# 如果使用了 byType 的方式获取 Service，需添加下面规则，保护接口
--keep interface * implements com.alibaba.android.arouter.facade.template.IProvider
+# 保留 Scarlet 和rxjava相关的类和方法
+-keep class com.tinder.scarlet.** { *; }
+-keep class io.reactivex.** { *; }
 
-# 如果使用了 单类注入，即不定义接口实现 IProvider，需添加下面规则，保护实现
-# -keep class * implements com.alibaba.android.arouter.facade.template.IProvider
 
 #ImmersionBar
  -keep class com.gyf.immersionbar.* {*;}
@@ -77,5 +90,5 @@
 }
 
 #Fragment不需要在AndroidManifest.xml中注册，需要额外保护下
--keep public class * extends android.support.v4.app.Fragment
--keep public class * extends android.app.Fragment
+ -keep public class * extends android.app.Fragment
+ -keep public class * extends androidx.fragment.app.Fragment

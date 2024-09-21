@@ -1,12 +1,12 @@
 package pan.lib.baseandroidframework.ui
 
 import android.annotation.SuppressLint
+import android.content.Intent
 import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
 import android.view.LayoutInflater
 import android.view.View
-import org.jetbrains.anko.startActivity
 import pan.lib.baseandroidframework.databinding.ActivitySplashBinding
 import pan.lib.baseandroidframework.ui.main.MainActivity
 import pan.lib.common_lib.base.BaseActivity
@@ -20,11 +20,11 @@ class SplashActivity : BaseActivity() {
         showToolbar(false)
         if (UserHelper.userInfo != null) {
             Handler(Looper.getMainLooper()).postDelayed({
-                startActivity<MainActivity>()
+                startActivity(Intent(this, MainActivity::class.java))
                 finish()
             }, 2000)
         } else {
-            startActivity<MainActivity>()
+            startActivity(Intent(this, MainActivity::class.java))
             finish()
         }
 
@@ -35,7 +35,6 @@ class SplashActivity : BaseActivity() {
         binding = ActivitySplashBinding.inflate(layoutInflater)
         return binding.root
     }
-
 
 
 }
